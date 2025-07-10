@@ -1,0 +1,5 @@
+.vscode/
+.pytest_cache/
+.cupon
+app/__pycache__/*
+tests/__pycache__/*
