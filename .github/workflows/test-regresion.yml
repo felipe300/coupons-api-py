@@ -1,5 +1,5 @@
 ---
-name: Pruebas de Regresión - Cupones
+name: Coupon API - Test Regresion
 "on":
   push:
     branches: [main]
@@ -13,17 +13,24 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Configurar Python
+      - name: Set Up Python 3.10
         uses: actions/setup-python@v4
         with:
           python-version: "3.10"
 
-      - name: Instalar dependencias
+      - name: Instal Dependencies
         run: |
-          python -m venv .coupon
-          source .coupon/bin/activate
+          python -m venv venv
+          source venv/bin/activate
           pip install -r requirements.txt
-      - name: Ejecutar pruebas
+
+      - name: Run tests
         run: |
-          source .coupon/bin/activate
-          pytest
+          source venv/bin/activate
+          pytest --cov=app --cov-report html tests/
+
+      - name: Upload Coverage Report Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: htmlcov
+          path: htmlcov/

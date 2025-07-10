@@ -5,7 +5,7 @@
 python -m vnv .YOUR_DIRECTORY_NAME
 source .YOUR_DIRECTORY_NAME/bin/env # Linux
 
-pip install flask requests
+pip install flask pytest
 pip freeze > requirements.txt
 ```
 
@@ -27,3 +27,5 @@ pytest --cov-report term-missing --cov=app tests/
 # this will create a directory in the root of your project called "htmlcov"
 pytest --cov-report html --cov=app tests/
 ```
+
+When installed `flask`, `pytest`, and `pytest-cov`; they install a bunch of "unnecessary packages", like `bcc`
