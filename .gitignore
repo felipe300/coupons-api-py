@@ -1,6 +1,6 @@
 .vscode/
 .pytest_cache/
-.cupon
+.venv
 app/__pycache__/*
 tests/__pycache__/*
 .coverage

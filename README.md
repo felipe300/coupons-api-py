@@ -2,7 +2,7 @@
 
 ```bash
 # Install
-python -m vnv .YOUR_DIRECTORY_NAME
+python -m venv .YOUR_DIRECTORY_NAME
 source .YOUR_DIRECTORY_NAME/bin/env # Linux
 
 pip install flask pytest
@@ -28,4 +28,8 @@ pytest --cov-report term-missing --cov=app tests/
 pytest --cov-report html --cov=app tests/
 ```
 
-When installed `flask`, `pytest`, and `pytest-cov`; they install a bunch of "unnecessary packages", like `bcc`
+> [!WARNING]
+> When installed `flask`, `pytest`, and `pytest-cov`; they install a bunch of "unnecessary packages", like `bcc`
+> Specially when I run `pip feeze > requirements.txt`
+> Solution:
+> Check your "local env" other way it will install all the package globally
